@@ -20,8 +20,9 @@ export default function Home() {
       const res = await fetch(API_URL);
       if (!res.ok) throw new Error("Failed to fetch products")
       const data = await res.json()
+      const sorted = [...data].sort((a, b) => b.id - a.id);
       //console.log("API Response:", JSON.stringify(json, null, 2));
-      setProducts(data ?? []);
+      setProducts(sorted ?? []);
     } catch (error) {
       setError(error.message)
     } finally {
