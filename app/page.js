@@ -139,6 +139,7 @@ export default function Home() {
               required value={form.description}
               placeholder='Short product description...'
               rows={2}
+              maxLength={100}
               className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
 
             </textarea>
