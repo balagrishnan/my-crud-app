@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-const API_URL = "http://localhost:8080/api/products";
+const API_URL = "http://localhost:8081/api/products";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -82,7 +82,7 @@ export default function Home() {
       price: product.price,
       description: product.description,
     });
-    window.scrollTo({ top: 0, behavior: "smooth" })
+    window.scrollTo({ top: 10, behavior: "smooth" })
   }
 
   function resetForm() {
@@ -194,7 +194,7 @@ export default function Home() {
                         <div>
                           <p className="font-semibold text-lg">{product.name}</p>
                           <p className="text-gray-500 text-sm mt-1">{product.description}</p>
-                          <p className="text-green-600 font-medium">{product.price}</p>
+                          <p className="text-green-600 font-medium">${product.price}/- each</p>
                         </div>
                         <div>
                           <button onClick={() => startEdit(product)}
