@@ -32,8 +32,8 @@ pipeline {
                     echo 'Building and running the NextJs Frontend container...'
                     bat 'docker build -t frontendnextjs-image .'
                     
-                    // CHANGED: Map host 3001 to container 3000
-                    bat 'docker run -d -p 3001:3000 --name my-crud-app-nextjs frontendnextjs-image'
+                    // CHANGED: Map host 3001 to container 3001
+                    bat 'docker run -d -p 3001:3001 --name my-crud-app-nextjs frontendnextjs-image'
                     
                     echo 'Frontend (3001) has been deployed successfully!'
                 }
